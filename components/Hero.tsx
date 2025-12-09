@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 import { Search, ChevronDown, MapPin, Building2, Wallet } from 'lucide-react';
 import { LOCATIONS, PROPERTY_TYPES } from '../constants';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+    onSearch: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onSearch }) => {
   const [activeTab, setActiveTab] = useState<'comprar' | 'alugar'>('comprar');
 
   return (
@@ -124,7 +128,10 @@ export const Hero: React.FC = () => {
 
             {/* Search Button */}
             <div className="mt-4 md:mt-0">
-              <button className="w-full bg-brand-900 hover:bg-brand-800 text-white font-medium h-14 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-brand-900/20 active:scale-95">
+              <button 
+                onClick={onSearch}
+                className="w-full bg-brand-900 hover:bg-brand-800 text-white font-medium h-14 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-brand-900/20 active:scale-95"
+              >
                 <Search className="w-5 h-5" />
                 <span>Buscar Imóveis</span>
               </button>

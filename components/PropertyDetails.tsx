@@ -211,11 +211,11 @@ export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ propertyId, on
                             <Calendar className="w-4 h-4 text-brand-accent" />
                             Agendar Visita
                         </h5>
-                        <form className="space-y-3">
-                            <input type="text" placeholder="Seu Nome" className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-brand-accent rounded-lg px-4 py-3 text-sm transition-all outline-none" />
-                            <input type="email" placeholder="Seu E-mail" className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-brand-accent rounded-lg px-4 py-3 text-sm transition-all outline-none" />
-                            <input type="tel" placeholder="Seu Telefone" className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-brand-accent rounded-lg px-4 py-3 text-sm transition-all outline-none" />
-                            <button className="w-full bg-brand-accent text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition-colors mt-2">
+                        <form className="space-y-3" onSubmit={(e) => { e.preventDefault(); alert("Mensagem enviada! Entraremos em contato."); }}>
+                            <input type="text" placeholder="Seu Nome" className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-brand-accent rounded-lg px-4 py-3 text-sm transition-all outline-none" required />
+                            <input type="email" placeholder="Seu E-mail" className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-brand-accent rounded-lg px-4 py-3 text-sm transition-all outline-none" required />
+                            <input type="tel" placeholder="Seu Telefone" className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-brand-accent rounded-lg px-4 py-3 text-sm transition-all outline-none" required />
+                            <button type="submit" className="w-full bg-brand-accent text-white font-bold py-3 rounded-lg hover:bg-yellow-600 transition-colors mt-2">
                                 Solicitar Contato
                             </button>
                         </form>

@@ -26,7 +26,7 @@ function App() {
   const renderContent = () => {
     switch (currentView) {
       case 'home':
-        return <Home onPropertySelect={handlePropertySelect} />;
+        return <Home onPropertySelect={handlePropertySelect} onNavigate={() => handleNavigate('properties')} />;
       case 'properties':
         return <PropertiesPage onPropertySelect={handlePropertySelect} />;
       case 'property-details':
@@ -35,7 +35,7 @@ function App() {
         }
         return <PropertiesPage onPropertySelect={handlePropertySelect} />; // Fallback
       default:
-        return <Home onPropertySelect={handlePropertySelect} />;
+        return <Home onPropertySelect={handlePropertySelect} onNavigate={() => handleNavigate('properties')} />;
     }
   };
 

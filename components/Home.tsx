@@ -6,14 +6,15 @@ import { AboutSection } from './AboutSection';
 
 interface HomeProps {
   onPropertySelect: (id: string) => void;
+  onNavigate: () => void;
 }
 
-export const Home: React.FC<HomeProps> = ({ onPropertySelect }) => {
+export const Home: React.FC<HomeProps> = ({ onPropertySelect, onNavigate }) => {
   return (
     <>
-      <Hero />
-      <FeaturedSection onPropertySelect={onPropertySelect} />
-      <ListingSection onPropertySelect={onPropertySelect} />
+      <Hero onSearch={onNavigate} />
+      <FeaturedSection onPropertySelect={onPropertySelect} onViewAll={onNavigate} />
+      <ListingSection onPropertySelect={onPropertySelect} onLoadMore={onNavigate} />
       <AboutSection />
     </>
   );

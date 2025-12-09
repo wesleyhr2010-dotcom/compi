@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 
 interface ListingSectionProps {
   onPropertySelect: (id: string) => void;
+  onLoadMore: () => void;
 }
 
-export const ListingSection: React.FC<ListingSectionProps> = ({ onPropertySelect }) => {
+export const ListingSection: React.FC<ListingSectionProps> = ({ onPropertySelect, onLoadMore }) => {
   // Exclude those already shown in featured if desired, or just show regular listings
   const generalProperties = PROPERTIES.filter(p => !p.oldPrice);
 
@@ -47,10 +48,7 @@ export const ListingSection: React.FC<ListingSectionProps> = ({ onPropertySelect
         <div className="mt-16 text-center">
             <button 
               className="px-8 py-4 border border-brand-900 text-brand-900 font-semibold rounded-full hover:bg-brand-900 hover:text-white transition-all duration-300"
-              onClick={() => {
-                // In a real app, load more properties. 
-                // Here we might navigate to the full list
-              }}
+              onClick={onLoadMore}
             >
                 Carregar Mais Imóveis
             </button>

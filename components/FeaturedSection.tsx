@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 
 interface FeaturedSectionProps {
   onPropertySelect: (id: string) => void;
+  onViewAll: () => void;
 }
 
-export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onPropertySelect }) => {
+export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onPropertySelect, onViewAll }) => {
   const featuredProperties = PROPERTIES.filter(p => p.oldPrice);
 
   return (
@@ -33,15 +34,15 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({ onPropertySele
               Ofertas da Semana
             </motion.h3>
           </div>
-          <motion.a 
+          <motion.button 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            href="#" 
+            onClick={onViewAll}
             className="text-brand-900 font-semibold border-b border-brand-900 pb-1 hover:text-brand-accent hover:border-brand-accent transition-all mt-4 md:mt-0"
           >
             Ver todas as ofertas
-          </motion.a>
+          </motion.button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
