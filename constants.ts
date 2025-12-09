@@ -17,19 +17,6 @@ export const PROPERTY_TYPES = [
   'Depósito'
 ];
 
-export const AGENTS = {
-  gleison: {
-    name: 'Gleison',
-    photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80',
-    phone: '+595 983 123 456'
-  },
-  ana: {
-    name: 'Ana Silva',
-    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
-    phone: '+595 973 654 321'
-  }
-};
-
 export const PROPERTIES: Property[] = [
   {
     id: '1',
@@ -39,11 +26,10 @@ export const PROPERTIES: Property[] = [
     price: 450000,
     oldPrice: 485000,
     type: 'Residencial',
-    image: 'https://images.unsplash.com/photo-1600596542815-6ad4c727dd2d?auto=format&fit=crop&w=800&q=80', // Fixed: Reliable luxury house image
+    image: 'https://images.unsplash.com/photo-1600596542815-6ad4c727dd2d?auto=format&fit=crop&w=800&q=80',
     beds: 5,
     baths: 6,
     sqm: 650,
-    agent: AGENTS.gleison,
     isFeatured: true
   },
   {
@@ -53,9 +39,8 @@ export const PROPERTIES: Property[] = [
     city: 'Assunção',
     price: 120000,
     type: 'Oficina',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80', // Verified office image
-    sqm: 85,
-    agent: AGENTS.ana
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+    sqm: 85
   },
   {
     id: '3',
@@ -65,9 +50,8 @@ export const PROPERTIES: Property[] = [
     price: 850000,
     oldPrice: 920000,
     type: 'Industrial',
-    image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80', // Fixed: Modern industrial building/land
+    image: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80',
     sqm: 10000,
-    agent: AGENTS.gleison,
     isFeatured: true
   },
   {
@@ -77,11 +61,10 @@ export const PROPERTIES: Property[] = [
     city: 'Encarnación',
     price: 320000,
     type: 'Residencial',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80', // Verified modern home
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
     beds: 3,
     baths: 3,
-    sqm: 220,
-    agent: AGENTS.ana
+    sqm: 220
   },
   {
     id: '5',
@@ -90,9 +73,8 @@ export const PROPERTIES: Property[] = [
     city: 'Hernandarias',
     price: 2500, // Monthly Rent implied or sale price
     type: 'Depósito',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80', // Verified warehouse
-    sqm: 1200,
-    agent: AGENTS.gleison
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+    sqm: 1200
   },
   {
     id: '6',
@@ -101,8 +83,7 @@ export const PROPERTIES: Property[] = [
     city: 'Santa Rita',
     price: 90000,
     type: 'Terreno',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80', // Verified land/field
-    sqm: 450,
-    agent: AGENTS.ana
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
+    sqm: 450
   }
 ];

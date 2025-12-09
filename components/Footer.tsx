@@ -1,6 +1,24 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
+const CompiereLogoFooter = () => (
+  <div className="flex items-center gap-3 text-brand-900">
+    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+      <path d="M10 90H90" stroke="currentColor" strokeWidth="6" strokeLinecap="square"/>
+      <path d="M10 90V40" stroke="currentColor" strokeWidth="6" strokeLinecap="square"/>
+      <path d="M30 50V20H80V60H50" stroke="currentColor" strokeWidth="6" strokeLinecap="square"/>
+    </svg>
+    <div className="flex flex-col justify-center">
+      <span className="font-sans text-xl font-medium tracking-wide leading-none">
+        COMPIERE
+      </span>
+      <span className="font-sans text-[0.6rem] tracking-[0.15em] font-normal leading-tight opacity-90 mt-1">
+        DESARROLLOS INMOBILIARIOS
+      </span>
+    </div>
+  </div>
+);
+
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-50 pt-20 pb-10 border-t border-gray-200">
@@ -9,11 +27,8 @@ export const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-brand-900 rounded-tr-lg rounded-bl-lg" />
-                <span className="font-serif text-xl font-bold text-brand-900">Compiere</span>
-            </div>
-            <p className="text-gray-500 text-sm leading-relaxed">
+            <CompiereLogoFooter />
+            <p className="text-gray-500 text-sm leading-relaxed mt-4">
               Transformando sonhos em patrimônio sólido. A sua parceira de confiança no mercado imobiliário paraguaio.
             </p>
             <div className="flex gap-4">

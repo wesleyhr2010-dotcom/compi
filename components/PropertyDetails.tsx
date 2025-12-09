@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, MapPin, BedDouble, Bath, Maximize, Check, Phone, MessageCircle, Calendar } from 'lucide-react';
+import { ArrowLeft, MapPin, BedDouble, Bath, Maximize, Check, Phone, MessageCircle, Calendar, ShieldCheck } from 'lucide-react';
 import { Property } from '../types';
 import { PROPERTIES } from '../constants';
 
@@ -180,19 +180,11 @@ export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ propertyId, on
           {/* Right Column: Sticky Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-28">
-                {/* Agent Card */}
+                {/* Contact Card */}
                 <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-xl shadow-brand-900/5 mb-6">
-                    <div className="flex items-center gap-4 mb-6">
-                        <img 
-                            src={property.agent.photo} 
-                            alt={property.agent.name} 
-                            className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md"
-                        />
-                        <div>
-                            <p className="text-xs text-gray-400 uppercase tracking-wide font-bold">Corretor Responsável</p>
-                            <h4 className="text-lg font-bold text-brand-900">{property.agent.name}</h4>
-                            <p className="text-sm text-gray-500">Especialista em Alto Padrão</p>
-                        </div>
+                    <div className="mb-6">
+                        <h4 className="text-xl font-serif font-medium text-brand-900 mb-2">Interessado neste imóvel?</h4>
+                        <p className="text-sm text-gray-500">Entre em contato diretamente com nossa equipe de vendas.</p>
                     </div>
                     
                     <div className="flex gap-3 mb-6">
@@ -222,13 +214,16 @@ export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ propertyId, on
                     </div>
                 </div>
 
-                <div className="bg-brand-900 rounded-3xl p-6 text-white text-center relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-brand-accent/20 rounded-full blur-xl transform translate-x-10 -translate-y-10" />
-                    <h5 className="font-serif text-xl mb-2 relative z-10">Precisa de Financiamento?</h5>
-                    <p className="text-gray-300 text-sm mb-4 relative z-10">Nossa equipe jurídica auxilia em todo o processo bancário.</p>
-                    <button className="text-xs font-bold uppercase tracking-widest border border-white/30 px-4 py-2 rounded-full hover:bg-white hover:text-brand-900 transition-all relative z-10">
-                        Saiba Mais
-                    </button>
+                <div className="bg-brand-900 rounded-3xl p-6 text-white relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/20 rounded-full blur-2xl transform translate-x-10 -translate-y-10" />
+                    <div className="relative z-10 flex flex-col items-center text-center">
+                        <ShieldCheck className="w-10 h-10 text-brand-accent mb-3" />
+                        <h5 className="font-serif text-xl mb-2">Segurança Garantida</h5>
+                        <p className="text-gray-300 text-sm mb-4">Todas as nossas propriedades possuem documentação verificada.</p>
+                        <button className="text-xs font-bold uppercase tracking-widest border border-white/30 px-4 py-2 rounded-full hover:bg-white hover:text-brand-900 transition-all">
+                            Saiba Mais
+                        </button>
+                    </div>
                 </div>
             </div>
           </div>

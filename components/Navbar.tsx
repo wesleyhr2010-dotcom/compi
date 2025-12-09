@@ -6,6 +6,26 @@ interface NavbarProps {
   currentPage: 'home' | 'properties';
 }
 
+const CompiereLogo = ({ colorClass }: { colorClass: string }) => (
+  <div className={`flex items-center gap-3 ${colorClass}`}>
+    {/* Geometric Icon Replica */}
+    <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0 w-10 h-10 md:w-12 md:h-12">
+      <path d="M10 90H90" stroke="currentColor" strokeWidth="4" strokeLinecap="square"/>
+      <path d="M10 90V40" stroke="currentColor" strokeWidth="4" strokeLinecap="square"/>
+      <path d="M30 50V20H80V60H50" stroke="currentColor" strokeWidth="4" strokeLinecap="square"/>
+    </svg>
+    
+    <div className="flex flex-col justify-center">
+      <span className="font-sans text-xl md:text-2xl font-medium tracking-wide leading-none">
+        COMPIERE
+      </span>
+      <span className="font-sans text-[0.55rem] md:text-[0.65rem] tracking-[0.15em] font-normal leading-tight opacity-90 mt-1">
+        DESARROLLOS INMOBILIARIOS
+      </span>
+    </div>
+  </div>
+);
+
 export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,7 +44,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
   // Determine text color based on state
   const textColor = scrolled || isSolid ? 'text-brand-900' : 'text-white';
   const bgColor = scrolled || isSolid ? 'bg-white/95 backdrop-blur-sm border-gray-100 shadow-sm' : 'bg-transparent border-transparent';
-  const logoBg = scrolled || isSolid ? 'bg-brand-900' : 'bg-white';
 
   return (
     <header 
@@ -32,11 +51,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
     >
       <div className="container mx-auto px-4 lg:px-8 flex justify-between items-center">
         {/* Logo */}
-        <button onClick={() => onNavigate('home')} className="flex items-center gap-2 group">
-           <div className={`w-8 h-8 ${logoBg} rounded-tr-xl rounded-bl-xl transition-colors`} />
-           <span className={`font-serif text-2xl font-bold tracking-tight ${textColor}`}>
-            Compiere
-           </span>
+        <button onClick={() => onNavigate('home')} className="flex items-center gap-2 group focus:outline-none">
+           <CompiereLogo colorClass={textColor} />
         </button>
 
         {/* Desktop Menu */}

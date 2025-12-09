@@ -1,11 +1,5 @@
 export type PropertyType = 'Residencial' | 'Comercial' | 'Industrial' | 'Terreno' | 'Oficina' | 'Depósito';
 
-export interface Agent {
-  name: string;
-  photo: string;
-  phone: string;
-}
-
 export interface Property {
   id: string;
   title: string;
@@ -18,7 +12,6 @@ export interface Property {
   beds?: number;
   baths?: number;
   sqm: number;
-  agent: Agent;
   isFeatured?: boolean;
 }
 

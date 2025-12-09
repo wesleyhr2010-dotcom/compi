@@ -13,8 +13,6 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onClick })
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
 
   const handleClick = (e: React.MouseEvent) => {
-    // Prevent default anchor behavior if we wrap in link later, 
-    // and trigger the onClick prop
     e.preventDefault();
     if (onClick) onClick(property.id);
   };
@@ -49,7 +47,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onClick })
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
         
-        {/* Overlay gradient for text readability if needed, though clean is better */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
@@ -99,34 +97,26 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onClick })
             </span>
         </div>
 
-        {/* Footer: Agent & Actions */}
+        {/* Footer: Actions */}
         <div className="mt-auto flex items-center justify-between pt-2">
-            <div className="flex items-center gap-3">
-                <img 
-                    src={property.agent.photo} 
-                    alt={property.agent.name} 
-                    className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
-                />
-                <div className="flex flex-col">
-                    <span className="text-[10px] text-gray-400 uppercase tracking-wide">Representante</span>
-                    <span className="text-xs font-semibold text-gray-700">{property.agent.name}</span>
-                </div>
-            </div>
+            <span className="text-[10px] text-gray-400 font-medium uppercase tracking-widest">
+                COD: {property.id.padStart(4, '0')}
+            </span>
             
             <div className="flex gap-2">
                 <button 
                   onClick={(e) => { e.stopPropagation(); /* Logic for whatsapp */ }}
-                  className="p-2 rounded-full bg-gray-50 hover:bg-green-50 text-gray-600 hover:text-green-600 transition-colors" 
+                  className="p-2 rounded-full bg-gray-50 hover:bg-green-50 text-gray-600 hover:text-green-600 transition-colors border border-transparent hover:border-green-200" 
                   title="WhatsApp"
                 >
                     <MessageCircle className="w-4 h-4" />
                 </button>
                 <button 
                   onClick={handleClick}
-                  className="p-2 rounded-full bg-brand-900 text-white hover:bg-brand-800 transition-colors" 
+                  className="px-4 py-2 rounded-full bg-brand-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-800 transition-colors flex items-center gap-2" 
                   title="Ver Detalhes"
                 >
-                    <ArrowUpRight className="w-4 h-4" />
+                    Detalhes <ArrowUpRight className="w-3 h-3" />
                 </button>
             </div>
         </div>
